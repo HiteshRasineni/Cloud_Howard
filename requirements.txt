@@ -2,9 +2,9 @@
 Flask==3.0.3
 gunicorn==21.2.0
 
-# PyTorch (CPU-only to avoid CUDA issues on Render)
+# PyTorch (CPU-only for Render)
 torch==2.5.1+cpu
-torchvision==0.20.1+cpu
+torchvision==0.22.2+cpu
 --extra-index-url https://download.pytorch.org/whl/cpu
 
 # Utility packages
