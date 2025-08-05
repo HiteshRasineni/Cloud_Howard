@@ -3,9 +3,16 @@ import torch
 import torch.nn.functional as F
 from torchvision import transforms
 from PIL import Image
-from sklearn.metrics import classification_report, confusion_matrix
 import config
 from model import get_model
+
+# ✅ Optional: Only import sklearn for local evaluation
+try:
+    from sklearn.metrics import classification_report, confusion_matrix
+    SKLEARN_AVAILABLE = True
+except ImportError:
+    SKLEARN_AVAILABLE = False
+    print("⚠️ sklearn not available - skipping evaluation metrics.")
 
 device = config.DEVICE
 model = get_model()
@@ -37,7 +44,8 @@ def predict_folder(folder_path, model, device, threshold=0.4):
                 label_map[file] = config.CLASS_NAMES.index(label)
 
     for file_name in os.listdir(folder_path):
-        if not file_name.lower().endswith(('.jpg', '.jpeg', '.png')): continue
+        if not file_name.lower().endswith(('.jpg', '.jpeg', '.png')):
+            continue
         pred_class, probs = predict_image(os.path.join(folder_path, file_name), model, device)
         if probs[pred_class] < threshold:
             print(f"\nImage: {file_name} → Rejected (Low confidence: {probs[pred_class]:.4f})")
@@ -49,8 +57,12 @@ def predict_folder(folder_path, model, device, threshold=0.4):
         if file_name in label_map:
             y_true.append(label_map[file_name])
 
-    if y_true:
+    # ✅ Only run sklearn-based metrics if available (local only)
+    if y_true and SKLEARN_AVAILABLE:
         print("\nConfusion Matrix:\n", confusion_matrix(y_true, y_pred))
         print("\nClassification Report:\n", classification_report(y_true, y_pred, target_names=config.CLASS_NAMES))
+    elif y_true:
+        print("⚠️ Skipping confusion matrix and classification report (sklearn not installed).")
 
-predict_folder("testing", model, device, threshold=0.4)
+# Uncomment for local testing
+# predict_folder("testing", model, device, threshold=0.4)
