@@ -1,16 +1,16 @@
 # Web server
-Flask==3.0.3
-gunicorn==21.2.0
+Flask>=3.0.3
+gunicorn>=21.2.0
 
-# PyTorch (CPU-only; default wheel is CPU if no CUDA is present)
-torch==2.4.0
-torchvision==0.19.0
+# PyTorch (CPU-only, latest supported)
+torch>=2.7.1
+torchvision>=0.22.0
 
 # Utility packages
-numpy==1.26.4
-Pillow==10.4.0
-tqdm==4.66.4
+numpy>=1.26.4
+Pillow>=10.4.0
+tqdm>=4.66.4
 
 # Evaluation and metrics
-scikit-learn==1.5.2
-matplotlib==3.9.2
+scikit-learn>=1.5.2
+matplotlib>=3.9.2
