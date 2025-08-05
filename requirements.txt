@@ -1,13 +1,16 @@
-Flask==2.3.3
-gunicorn==21.2.0
+# Web server
+Flask>=2.3.3
+gunicorn>=21.2.0
 
-# PyTorch (last version to support Python 3.10 fully)
-torch==2.2.2
-torchvision==0.17.2
+# PyTorch (allow latest compatible)
+torch>=2.5.0
+torchvision>=0.22.0
 
-numpy==1.26.4
-Pillow==10.3.0
-tqdm==4.66.4
+# Utility packages
+numpy>=1.26.4
+Pillow>=10.3.0
+tqdm>=4.66.4
 
-scikit-learn==1.5.0
-matplotlib==3.9.0
+# Evaluation
+scikit-learn>=1.5.0
+matplotlib>=3.9.0
