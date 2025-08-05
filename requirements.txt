@@ -5,7 +5,6 @@ gunicorn==21.2.0
 # PyTorch and related packages
 torch==2.5.1
 torchvision==0.22.1
-torchaudio==2.6.0
 
 # Utility packages
 numpy==1.26.4
