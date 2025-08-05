@@ -1,16 +1,16 @@
-# Web framework
+# Web
 Flask==2.3.3
 gunicorn==21.2.0
 
-# Core ML & DL
-torch==2.7.1
-torchvision==0.18.1
-torchaudio==2.7.1
+# Torch & Vision (compatible versions)
+torch==2.5.1
+torchvision==0.22.1
+torchaudio==2.5.1
 
-# Utilities
+# Utils
+numpy==1.26.4
 Pillow==10.3.0
 tqdm==4.66.4
-numpy==1.26.4
 
 # Evaluation
 scikit-learn==1.5.0
