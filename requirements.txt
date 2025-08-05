@@ -1,7 +1,17 @@
-torch>=2.0.0
-torchvision>=0.15.0
-tqdm>=4.65.0
-scikit-learn>=1.2.0
-pillow>=9.0.0
-matplotlib>=3.7.0
-numpy>=1.24.0
+# Web server
+Flask==3.0.3
+gunicorn==21.2.0
+
+# PyTorch (CPU-only to avoid CUDA issues on Render)
+torch==2.5.1+cpu
+torchvision==0.20.1+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Utility packages
+numpy==1.26.4
+Pillow==10.4.0
+tqdm==4.66.4
+
+# Evaluation and metrics
+scikit-learn==1.5.2
+matplotlib==3.9.2
