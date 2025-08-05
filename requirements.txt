@@ -1,0 +1,17 @@
+# Web framework
+Flask==2.3.3
+gunicorn==21.2.0
+
+# Core ML & DL
+torch==2.2.2
+torchvision==0.17.2
+torchaudio==2.2.2
+
+# Utilities
+Pillow==10.3.0
+tqdm==4.66.4
+numpy==1.26.4
+
+# Evaluation
+scikit-learn==1.5.0
+matplotlib==3.9.0
