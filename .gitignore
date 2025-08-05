@@ -1,1 +1,40 @@
+# Python cache
 __pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and output
+*.log
+
+# IDEs & editors
+.vscode/
+*.swp
+*.swo
+*.idea/
+
+# Jupyter Notebooks (not used in production)
+*.ipynb
+
+# Training artifacts (exclude these in web app)
+train.py
+evaluate.py
+data*/   # training/testing datasets
+
+# Model checkpoints
+# Include .pth if needed for prediction; comment out to keep it
+# *.pth
+
+# Deployment/hosting
+render.yaml
+runtime.txt
+
+# Other version control artifacts
+*.bak
+*.tmp
