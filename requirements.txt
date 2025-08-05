@@ -3,9 +3,9 @@ Flask==2.3.3
 gunicorn==21.2.0
 
 # Core ML & DL
-torch==2.2.2
-torchvision==0.17.2
-torchaudio==2.2.2
+torch==2.7.1
+torchvision==0.18.1
+torchaudio==2.7.1
 
 # Utilities
 Pillow==10.3.0
